@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>QT Holding Ltd</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        :root {
+            --black: #111;
+            --white: #fff;
+        }
+        html, body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: var(--white);
+            color: var(--black);
+            min-height: 100%;
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        header {
+            padding: 2.5rem 0 1.5rem 0;
+            text-align: center;
+            background: var(--white);
+        }
+        .brand {
+            display: inline-block;
+            background: var(--black);
+            color: var(--white);
+            border-radius: 9999px;
+            padding: 0.75rem 2rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+            animation: glow 2s infinite alternate;
+        }
+        @keyframes glow {
+            0%,100% { box-shadow: 0 2px 8px rgba(0,0,0,0.07);}
+            50% { box-shadow: 0 0 24px var(--black);}
+        }
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin: 0 0 1.5rem 0;
+            line-height: 1.1;
+        }
+        .highlight {
+            background: linear-gradient(90deg, var(--black), #444);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            color: transparent;
+            animation: glow 2s infinite alternate;
+        }
+        .divider {
+            width: 4rem;
+            height: 0.25rem;
+            background: linear-gradient(90deg, var(--black), #444);
+            border-radius: 9999px;
+            margin: 1.5rem auto 0 auto;
+        }
+        main {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem 1rem 3rem 1rem;
+        }
+        .content {
+            max-width: 700px;
+            margin: 0 auto;
+            background: rgba(255,255,255,0.95);
+            border-radius: 2rem;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.08);
+            padding: 2.5rem 2rem;
+            border: 1px solid rgba(0,0,0,0.08);
+        }
+        .desc {
+            font-size: 1.15rem;
+            color: #222;
+            margin-bottom: 2.5rem;
+            line-height: 1.7;
+            text-align: center;
+        }
+        .subsidiaries {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            margin-bottom: 2.5rem;
+        }
+        .subsidiary {
+            display: flex;
+            flex-direction: column;
+            background: var(--white);
+            border-radius: 1.25rem;
+            border: 1px solid rgba(0,0,0,0.12);
+            box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+            padding: 1.5rem 1.25rem;
+            transition: box-shadow 0.2s, transform 0.2s;
+        }
+        .subsidiary:hover {
+            box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+            transform: translateY(-0.25rem);
+        }
+        .subsidiary-title {
+            font-weight: 600;
+            font-size: 1.15rem;
+            margin-bottom: 0.5rem;
+            color: var(--black);
+        }
+        .subsidiary-desc {
+            color: #444;
+            font-size: 1rem;
+            margin: 0;
+        }
+        .role {
+            background: #f7f7f7;
+            border-radius: 1rem;
+            padding: 1.25rem 1rem;
+            font-size: 1.05rem;
+            color: #222;
+            margin-bottom: 2.5rem;
+            text-align: center;
+            border: 1px solid rgba(0,0,0,0.07);
+        }
+        .vision {
+            text-align: center;
+            margin-bottom: 0;
+            font-size: 1.1rem;
+            color: #333;
+        }
+        footer {
+            text-align: center;
+            padding: 2rem 1rem 1.5rem 1rem;
+            background: var(--white);
+            border-top: 1px solid #eee;
+            font-size: 1rem;
+            color: #888;
+        }
+        @media (min-width: 700px) {
+            .subsidiaries {
+                flex-direction: row;
+                gap: 2rem;
+            }
+            .subsidiary {
+                flex: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="brand">QT HOLDING LTD</div>
+        <h1>
+            <span class="highlight">Empowering Rwanda’s</span> Tech Future
+        </h1>
+        <div class="divider"></div>
+    </header>
+    <main>
+        <section class="content">
+            <div class="desc"></div>
+                QT Holding Ltd is a Rwandan holding company that oversees and supports two subsidiaries: <b>RSwitch</b>, a fintech leader driving the cashless economy in Rwanda, and <b>QT Global Software</b>, a software engineering company delivering tailored tech solutions for local challenges.
+            </div>
+            <div class="subsidiaries">
+                <div class="subsidiary">
+                    <div class="subsidiary-title">RSwitch</div>
+                    <div class="subsidiary-desc"></div>
+                        Fintech leader advancing Rwanda’s cashless economy through secure, innovative payment solutions.
+                    </div>
+                </div>
+                <div class="subsidiary">
+                    <div class="subsidiary-title">QT Global Software</div>
+                    <div class="subsidiary-desc">
+                        Software engineering company delivering custom technology solutions for Rwanda’s unique needs.
+                    </div>
+                </div>
+            </div>
+            <div class="role">
+                As a holding company, we provide strategic leadership, financial oversight, and shared services to our subsidiaries, enabling them to focus on their core missions while scaling their operations effectively.
+            </div>
+            <div class="vision">
+                QT Holding plays a vital role in advancing Rwanda’s Vision 2050 of driving innovation and supporting a sustainable, technology-driven economy.
+            </div>
+        </section>
+    </main>
+    <footer>
+        &copy; 2024 QT Holding Ltd. All rights reserved.
+    </footer>
+</body>
+</html>
