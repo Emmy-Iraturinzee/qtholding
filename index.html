@@ -30,88 +30,171 @@
 
 <body class="index-page">
 
-  <header id="header" class="header d-flex align-items-center fixed-top">
-    <div class="header-container container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
-
-      <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
-        <img src="assets/img/logo.jpg" height="80" alt="QT Holding Logo">
-      </a>
-
-      <nav id="navmenu" class="navmenu">
-        <ul>
-          <li><a href="#hero" class="active">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#subsidiaries">Subsidiaries</a></li>
-          <li><a href="#vision">Vision 2050</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
-      </nav>
-
-      <a class="btn-getstarted" href="#contact">Get In Touch</a>
+<!-- Navbar Start -->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top qt-navbar" style="background: rgba(0,0,0,0.25);  backdrop-filter: blur(6px); box-shadow: 0 2px 16px #0002; transition: background 0.3s, box-shadow 0.3s;">
+  <div class="container">
+    <a class="navbar-brand d-flex align-items-center" href="#hero">
+      <img src="assets/img/logo-light.png" alt="QT Holding Logo" width="90" height="90" class="me-2 rounded-circle">
+   
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="mainNavbar">
+      <ul class="navbar-nav mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" href="#hero">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#about">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#subsidiaries">Subsidiaries</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#vision">Vision 2050</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#contact">Contact</a>
+        </li>
+      </ul>
+      <!-- <div class="d-none d-lg-flex ms-4">
+        <a href="#" class="me-3 text-info fs-5"><i class="bi bi-linkedin"></i></a>
+        <a href="#" class="text-info fs-5"><i class="bi bi-twitter-x"></i></a>
+      </div> -->
     </div>
-  </header>
+  </div>
+</nav>
+<style>
+  .navbar-nav .nav-link {
+    color: #fff !important;
+    font-weight: lighter !important;
+    letter-spacing: 0.5px;
+    transition: color 0.2s;
+    margin: 10px;
+    
+  }
+  .navbar-nav .nav-link.active,
+  .navbar-nav .nav-link:hover,
+  .navbar-nav .nav-link:focus,
+  .navbar-nav .nav-link:c {
+    
+   
+   
+    border-bottom: 1px solid #ffffff;
+  }
+  .navbar-brand span {
+    color: #fff;
+    text-shadow: 0 2px 8px #0006;
+  }
+  @media (max-width: 991.98px) {
+    .navbar {
+      background: rgba(0,0,0,0.95) !important;
+      backdrop-filter: none !important;
+    }
+    .navbar-nav .nav-link {
+      padding: 0.8rem 1.2rem;
+      border-radius: 0;
+    }
+  }
+</style>
+<!-- Navbar End -->
 
   <main class="main" style="margin-top: -100px;">
 
     <!-- Hero Section -->
-    <section id="hero" class="hero section" >
-      <!-- Decorative Background Shapes -->
-      <div class="hero-bg-shapes">
-        <svg class="shape shape-1" width="220" height="220" viewBox="0 0 220 220" fill="none" xmlns="http://www.w3.org/2000/svg" style="position:absolute; top:-60px; left:-60px; z-index:0;">
-          <circle cx="110" cy="110" r="110" fill="#E3F0FF" opacity="0.5"/>
-        </svg>
-        <svg class="shape shape-2" width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" style="position:absolute; bottom:40px; right:40px; z-index:0;">
-          <rect x="0" y="0" width="120" height="120" rx="30" fill="#D1F2EB" opacity="0.4"/>
-        </svg>
-        <svg class="shape shape-3" width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" style="position:absolute; top:50%; left:80%; transform:translate(-50%,-50%); z-index:0;">
-          <polygon points="40,0 80,80 0,80" fill="#FDEBD0" opacity="0.5"/>
-        </svg>
-      </div>
+    <section id="hero" class="hero section d-flex align-items-center justify-content-center" style="min-height: 120vh; background: #000000; position: relative; overflow: hidden;">
       <style>
-      .hero-bg-shapes {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        pointer-events: none;
-        top: 0;
-        left: 0;
-        z-index: 0;
-      }
-      .hero.section {
-        position: relative;
-        overflow: hidden;
-        z-index: 1;
-      }
+        .hero-grid-bg {
+          position: absolute;
+          inset: 0;
+          z-index: 1;
+          pointer-events: none;
+          background: repeating-linear-gradient(
+            to right, rgba(255, 255, 255, 0.119) 0, rgba(255,255,255,0.07) 1px, transparent 1px, transparent 80px
+          ), repeating-linear-gradient(
+            to bottom, rgba(255, 255, 255, 0.119) 0, rgba(255, 255, 255, 0.119) 1px, transparent 1px, transparent 80px
+          );
+          animation: grid-move 6s linear infinite;
+          
+        }
+
+        /* @keyframes grid-move {
+          0% {
+            background-position: 0 0, 0 0;
+          }
+          100% {
+            background-position: 80px 80px, 80px 80px;
+          }
+        } */
+        .hero-content-center {
+          z-index: 2;
+          position: relative;
+          text-align: center;
+          width: 100%;
+          color: #fff;
+          font-family: 'Orbitron', 'Inter', 'Roboto', Arial, sans-serif;
+
+             
+        }
+       
+        .hero-title {
+          font-size: 4rem;
+          font-weight: 700;
+          letter-spacing: 2px;
+          margin-bottom: 0.5em;
+          color: #fff;
+          text-shadow: 0 2px 16px #0008;
+          text-align: left;
+          margin-top: 120px;
+          
+        }
+        .hero-subtitle {
+          font-size: 1.7rem;
+          font-weight: 400;
+          margin-bottom: 2em;
+          color: #dbeafe;
+          text-shadow: 0 1px 8px #0006;
+        }
+        .hero-btn {
+          display: inline-block;
+          padding: 0.7em 2.5em;
+          border: 2px solid #1ec6ff;
+          color: #1ec6ff;
+          background: transparent;
+          border-radius: 6px;
+          font-size: 2rem;
+          font-family: inherit;
+          font-weight: 600;
+          letter-spacing: 1px;
+          text-decoration: none;
+          transition: background 0.2s, color 0.2s;
+          box-shadow: 0 2px 24px #1ec6ff22;
+        }
+        .hero-btn:hover, .hero-btn:focus {
+          background: #1ec6ff;
+          color: #101B2A;
+          text-decoration: none;
+        }
+        @media (max-width: 768px) {
+          .hero-title { font-size: 2.2rem; }
+          .hero-subtitle { font-size: 1.1rem; }
+          .hero-btn { font-size: 1.1rem; padding: 0.6em 1.5em; }
+        }
       </style>
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-        <div class="row align-items-center">
-          <div class="col-lg-6">
-            <div class="hero-content" data-aos="fade-up" data-aos-delay="200">
-              <div class="company-badge mb-4">
-                <i class="bi bi-gear-fill me-2"></i>
-                Empowering Rwanda's Tech Future
-              </div>
-              <h1 class="mb-4">
-                QT Holding Ltd<br>
-                <span class="accent-text">Driving Innovation & Growth</span>
-              </h1>
-              <p class="mb-4 mb-md-5">
-                QT Holding Ltd is a Rwandan holding company that oversees and supports two subsidiaries: <strong>RSwitch</strong>, a fintech leader driving the cashless economy in Rwanda, and <strong>QT Global Software</strong>, a software engineering company delivering tailored tech solutions for local challenges.
-              </p>
-              <div class="hero-buttons">
-                <a href="#about" class="btn btn-primary me-0 me-sm-2 mx-1">Learn More</a>
-                <a href="#contact" class="btn btn-link mt-2 mt-sm-0">
-                  <i class="bi bi-envelope me-1"></i>
-                  Contact Us
-                </a>
-              </div>
-            </div>
+     <div class="hero-grid-bg-1"></div>
+      <div class="hero-grid-bg"></div>
+     
+
+      <div class="container  hero-row " style="z-index: 10;">
+        <div class="row">
+          <div class="col-lg-6 text-center text-lg-start mb-lg-0" data-aos="fade-dwon" data-aos-delay="100">
+            <h1 class="hero-title" >QT Holding Ltd Drives Innovation and Growth</h1>
+            
+            
           </div>
-          <div class="col-lg-6">
-            <div class="hero-image" data-aos="zoom-out" data-aos-delay="300">
-              <img src="assets/img/PNG-26.png" style="width: 100%;" alt="Hero Image" class="img-fluid">
-            </div>
+          <div class="col-lg-6 text-center" data-aos="fade-down" data-aos-delay="100">
+            <img src="assets/img/logo-light.png" width="500"  alt="QT Holding Logo" class="img-fluid rounded-4 logo-hero">
           </div>
         </div>
       </div>
@@ -152,27 +235,32 @@
       <div class="row gy-4">
         <div class="col-xl-6 col-md-6" data-aos="zoom-in" data-aos-delay="100">
         <div class="card h-100 shadow feature-box blue" style="background: #fff;">
-          <!-- <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=600&q=80" class="card-img-top" alt="RSwitch"> -->
+          <img src="assets/img/rswitch_imresizer.jpg" width="560" height="315"  class="card-img-top" alt="RSwitch">
           <div class="card-body">
-          <i class="bi bi-credit-card"></i>
+         
           <h4 class="card-title mt-3">RSwitch</h4>
           <p class="card-text">
             RSwitch is Rwanda’s national e-payment switch, leading the country’s transition to a cashless economy. Through secure, interoperable payment solutions, RSwitch enables seamless transactions for banks, fintechs, and businesses across Rwanda.
           </p>
-          <a href="#" class="btn btn-outline-primary mt-2">Learn More</a>
+          <a href="https://rswitch.co.rw/"  target="_blank" class="btn btn-outline-dark mt-2">Learn More</a>
           </div>
         </div>
         </div>
         <div class="col-xl-6 col-md-6" data-aos="zoom-in" data-aos-delay="200">
         <div class="card h-100 shadow feature-box green" style="background: #fff;">
-          <!-- <img src="assets/img/qt_global_logo-removebg-preview (3).png" class="card-img-top" alt="QT Global Software"> -->
-          <div class="card-body">
-          <i class="bi bi-code-slash"></i>
+<iframe width="560" height="315" 
+src="https://www.youtube.com/embed/R1HXSEBSa0g?si=V9lIXX8tiht-Uun2&autoplay=1&mute=1&controls=0" 
+title="YouTube video player" frameborder="0" 
+allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+referrerpolicy="strict-origin-when-cross-origin" 
+allowfullscreen></iframe>   
+      <div class="card-body">
+       
           <h4 class="card-title mt-3">QT Global Software</h4>
           <p class="card-text">
             QT Global Software is a software engineering company delivering tailored technology solutions for Rwanda’s unique challenges. From digital transformation to custom applications, we empower organizations to innovate and grow.
           </p>
-          <a href="#" class="btn btn-outline-success mt-2">Learn More</a>
+          <a href="https://www.qtglobal.rw" target="_blank" class="btn btn-outline-dark mt-2">Learn More</a>
           </div>
         </div>
         </div>
