@@ -204,7 +204,7 @@
         <div class="row gy-4 align-items-center justify-content-between flex-column-reverse flex-xl-row">
           <div class="col-xl-5 text-center" data-aos="fade-up" data-aos-delay="300">
             <div class="about-image-wrapper position-relative">
-              <img src="assets/img/csm_Ekash_ff311398ee.jpg" alt="QT Holding Team" class="img-fluid rounded-4 qt-bw-img shadow-lg" style="max-width: 90%; border: 6px solid #fff;">
+              <img id="about-img" src="assets/img/csm_Ekash_ff311398ee.jpg" alt="QT Holding Team" class="img-fluid rounded-4 qt-bw-img shadow-lg" style="max-width: 90%; border: 6px solid #fff;">
               <span class="about-image-overlay position-absolute top-0 start-0 w-100 h-100" style="background: linear-gradient(135deg, #1ec6ff33 0%, #00000044 100%); border-radius: 1.5rem;"></span>
             </div>
             <style>
@@ -224,14 +224,32 @@
                 z-index: 3;
                 position: relative;
               }
-              .qt-bw-img:hover,
-              .qt-bw-img:focus {
+              .qt-bw-img.qt-color {
                 filter: grayscale(0%);
               }
             </style>
+            <script>
+              document.addEventListener('DOMContentLoaded', function () {
+                const img = document.getElementById('about-img');
+                function checkImageInCenter() {
+                  const rect = img.getBoundingClientRect();
+                  const imgCenter = rect.top + rect.height / 2;
+                  const viewportCenter = window.innerHeight / 2;
+                  // Allow a small threshold for "centered"
+                  if (Math.abs(imgCenter - viewportCenter) < rect.height / 4) {
+                    img.classList.add('qt-color');
+                  } else {
+                    img.classList.remove('qt-color');
+                  }
+                }
+                window.addEventListener('scroll', checkImageInCenter, { passive: true });
+                window.addEventListener('resize', checkImageInCenter);
+                checkImageInCenter();
+              });
+            </script>
           </div>
           <div class="col-xl-6" data-aos="fade-up" data-aos-delay="200">
-            <span class="about-meta d-inline-block mb-2 px-3 py-1 rounded-pill bg-dark text-light fw-bold" style="font-size: 1rem; letter-spacing: 1px;">ABOUT QT HOLDING</span>
+            <span class="about-meta d-inline-block mb-3 px-3 py-1 rounded-pill bg-dark text-light fw-bold" style="font-size: 1rem; letter-spacing: 1px;">ABOUT QT HOLDING</span>
             <h2 class="about-title fw-bold mb-3" style="font-size:2.2rem;">Strategic Leadership for Rwanda’s Tech Ecosystem</h2>
             <p class="about-description mb-4" style="font-size:1.15rem;">
               As a holding company, QT Holding provides strategic leadership, financial oversight, and shared services to our subsidiaries, enabling them to focus on their core missions while scaling their operations effectively. We play a vital role in advancing Rwanda’s Vision 2050 by driving innovation and supporting a sustainable, technology-driven economy.
