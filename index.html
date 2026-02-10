@@ -158,8 +158,8 @@
         .hero-btn {
           display: inline-block;
           padding: 0.7em 2.5em;
-          border: 2px solid #1ec6ff;
-          color: #1ec6ff;
+          border: 2px solid #050505;
+          color: #060606;
           background: transparent;
           border-radius: 6px;
           font-size: 2rem;
@@ -171,7 +171,7 @@
           box-shadow: 0 2px 24px #1ec6ff22;
         }
         .hero-btn:hover, .hero-btn:focus {
-          background: #1ec6ff;
+          background: #ffffff;
           color: #101B2A;
           text-decoration: none;
         }
@@ -201,21 +201,46 @@
     <!-- About Section -->
     <section id="about" class="about section">
       <div class="container" data-aos="fade-up" data-aos-delay="100">
-        <div class="row gy-4 align-items-center justify-content-between">
+        <div class="row gy-4 align-items-center justify-content-between flex-column-reverse flex-xl-row">
+          <div class="col-xl-5 text-center" data-aos="fade-up" data-aos-delay="300">
+            <div class="about-image-wrapper position-relative">
+              <img src="assets/img/csm_Ekash_ff311398ee.jpg" alt="QT Holding Team" class="img-fluid rounded-4 qt-bw-img shadow-lg" style="max-width: 90%; border: 6px solid #fff;">
+              <span class="about-image-overlay position-absolute top-0 start-0 w-100 h-100" style="background: linear-gradient(135deg, #1ec6ff33 0%, #00000044 100%); border-radius: 1.5rem;"></span>
+            </div>
+            <style>
+              .about-image-wrapper {
+                display: inline-block;
+                position: relative;
+                margin-top: 2rem;
+                margin-bottom: 2rem;
+              }
+              .about-image-overlay {
+                pointer-events: none;
+                z-index: 2;
+              }
+              .qt-bw-img {
+                filter: grayscale(100%);
+                transition: filter 0.4s;
+                z-index: 3;
+                position: relative;
+              }
+              .qt-bw-img:hover,
+              .qt-bw-img:focus {
+                filter: grayscale(0%);
+              }
+            </style>
+          </div>
           <div class="col-xl-6" data-aos="fade-up" data-aos-delay="200">
-            <span class="about-meta">ABOUT QT HOLDING</span>
-            <h2 class="about-title">Strategic Leadership for Rwanda’s Tech Ecosystem</h2>
-            <p class="about-description">
+            <span class="about-meta d-inline-block mb-2 px-3 py-1 rounded-pill bg-dark text-light fw-bold" style="font-size: 1rem; letter-spacing: 1px;">ABOUT QT HOLDING</span>
+            <h2 class="about-title fw-bold mb-3" style="font-size:2.2rem;">Strategic Leadership for Rwanda’s Tech Ecosystem</h2>
+            <p class="about-description mb-4" style="font-size:1.15rem;">
               As a holding company, QT Holding provides strategic leadership, financial oversight, and shared services to our subsidiaries, enabling them to focus on their core missions while scaling their operations effectively. We play a vital role in advancing Rwanda’s Vision 2050 by driving innovation and supporting a sustainable, technology-driven economy.
             </p>
-            <ul class="feature-list">
-              <li><i class="bi bi-check-circle-fill"></i> Strategic leadership & financial oversight</li>
-              <li><i class="bi bi-check-circle-fill"></i> Shared services for operational efficiency</li>
-              <li><i class="bi bi-check-circle-fill"></i> Commitment to Rwanda’s Vision 2050</li>
+            <ul class="feature-list list-unstyled mb-0">
+              <li class="mb-2"><i class="bi bi-check-circle-fill text-dark me-2"></i> Strategic leadership & financial oversight</li>
+              <li class="mb-2"><i class="bi bi-check-circle-fill text-dark me-2"></i> Operational Efficiency</li>
+              <li class="mb-2"><i class="bi bi-check-circle-fill text-dark me-2"></i> Commitment to Rwanda’s Vision 2050</li>
             </ul>
-          </div>
-          <div class="col-xl-5" data-aos="fade-up" data-aos-delay="300">
-            <img src="assets/img/csm_Ekash_ff311398ee.jpg" alt="QT Holding Team" class="img-fluid main-image rounded-4">
           </div>
         </div>
       </div>
@@ -470,7 +495,7 @@ allowfullscreen></iframe>
         </div>
         <div class="col-lg-4 col-md-6 footer-about">
           <h4>About QT Holding</h4>
-          <p>QT Holding Ltd provides strategic leadership and shared services to empower Rwanda’s fintech and software sectors.</p>
+          <p>QT Holding empowers Rwanda’s fintech and software sectors.</p>
         </div>
       </div>
     </div>
